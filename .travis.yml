@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 2.1.2
+deploy:
+  provider: heroku
+  api_key:
+    secure: Vukv6PwNXaMnwK9da8VJAP3YqbBtvxACtVIwronHN0mH+QyAMsVknZ2MtwafeSkoHzaukFCsmj7JU+wa356pMaXnr3PCFOunWRWQDqZD0EYckGQkGEC0Pod5OPvwgdqqRy8lECkng2orNb93TMUd4i1T/txK4IRgB4Olz3FygXI=
+  app: murmuring-mesa-4834
+  on:
+    repo: esodov/enpit_day3_pair
+addons:
+  postgresql: "9.3"
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml

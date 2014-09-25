@@ -1,0 +1,31 @@
+<h1>Listing roll_books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lecture hour</th>
+      <th>Student id number</th>
+      <th>Name</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roll_books.each do |roll_book| %>
+      <tr>
+        <td><%= roll_book.Lecture_Hour %></td>
+        <td><%= roll_book.Student_Id_Number %></td>
+        <td><%= roll_book.Name %></td>
+        <td><%= roll_book.Notes %></td>
+        <td><%= link_to 'Show', roll_book %></td>
+        <td><%= link_to 'Edit', edit_roll_book_path(roll_book) %></td>
+        <td><%= link_to 'Destroy', roll_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Roll book', new_roll_book_path %>

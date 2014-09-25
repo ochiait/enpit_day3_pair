@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lecture hour:</strong>
+  <%= @roll_book.Lecture_Hour %>
+</p>
+
+<p>
+  <strong>Student id number:</strong>
+  <%= @roll_book.Student_Id_Number %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @roll_book.Name %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @roll_book.Notes %>
+</p>
+
+<%= link_to 'Edit', edit_roll_book_path(@roll_book) %> |
+<%= link_to 'Back', roll_books_path %>
